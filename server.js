@@ -35,13 +35,9 @@ app.post("/chat", async (req, res) => {
         }, {
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${OPENAI_API_KEY}`
+                "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
             }
         });
-
-        if (!response.data.choices || response.data.choices.length === 0) {
-            return res.status(500).json({ error: "❌ Invalid response from OpenAI." });
-        }
 
         res.json({ reply: response.data.choices[0].message.content });
     } catch (error) {
@@ -52,6 +48,7 @@ app.post("/chat", async (req, res) => {
         });
     }
 });
+
 
 // Use a Dynamic Port
 const PORT = process.env.PORT || 3000;
