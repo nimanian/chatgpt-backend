@@ -1,0 +1,22 @@
+{
+  "name": "chatgpt-backend",
+  "version": "1.0.0",
+  "description": "A Node.js backend API for ChatGPT integration.",
+  "main": "server.js",
+  "type": "module",
+  "dependencies": {
+    "axios": "*",
+    "cors": "*",
+    "dotenv": "*",
+    "express": "*"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "keywords": ["chatgpt", "express", "nodejs", "render"],
+  "author": "Your Name",
+  "license": "ISC"
+}
